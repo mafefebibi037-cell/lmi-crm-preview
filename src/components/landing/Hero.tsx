@@ -2,6 +2,7 @@ import { ButtonLink } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Card";
 import { Eyebrow } from "@/components/ui/Badge";
 import { heroConfig, type HeroConfig } from "@/data/site";
+import { DottedSurface } from "@/components/ui/dotted-surface";
 import { ArrowRight, ShieldCheck, Sparkles } from "lucide-react";
 
 /* ============================================================
@@ -68,21 +69,16 @@ function HeroBackground({ config }: { config: HeroConfig }) {
     );
   }
 
-  // Défaut : dégradé marine premium + "constellation" dorée
+  // Défaut : dégradé marine premium + surface de points animée (Three.js)
   return (
     <div className="absolute inset-0 -z-10 bg-mesh-navy overflow-hidden">
-      {/* Grille subtile */}
-      <div
-        className="absolute inset-0 opacity-[0.07]"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(255,255,255,.4) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.4) 1px, transparent 1px)",
-          backgroundSize: "56px 56px",
-        }}
-      />
+      {/* Surface de points dorés animée (21st.dev, adaptée) */}
+      <DottedSurface className="opacity-60" />
       {/* Halo doré flottant */}
       <div className="absolute -top-32 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-gold-400/20 blur-[120px] animate-[float_7s_ease-in-out_infinite]" />
       <div className="absolute bottom-0 right-10 h-72 w-72 rounded-full bg-navy-500/40 blur-[100px]" />
+      {/* Voile pour la lisibilité du texte */}
+      <div className="absolute inset-0 bg-gradient-to-b from-navy-950/30 via-transparent to-navy-950/60" />
     </div>
   );
 }
