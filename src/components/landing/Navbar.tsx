@@ -6,7 +6,7 @@ import { Logo } from "@/components/ui/Logo";
 import { ButtonLink } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Card";
 import { cn } from "@/lib/utils";
-import { Menu, X, LayoutDashboard } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const links = [
   { label: "Services", href: "#services" },
@@ -59,17 +59,6 @@ export function Navbar() {
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
-          <ButtonLink
-            href="/dashboard"
-            variant="ghost"
-            size="sm"
-            className={cn(
-              !scrolled && "text-white/90 hover:bg-white/10 hover:text-white"
-            )}
-          >
-            <LayoutDashboard className="h-4 w-4" />
-            Espace CRM
-          </ButtonLink>
           <ButtonLink href="#contact" variant="gold" size="sm">
             Prendre rendez-vous
           </ButtonLink>
@@ -104,9 +93,6 @@ export function Navbar() {
                   </a>
                 ))}
                 <div className="mt-3 grid gap-2">
-                  <ButtonLink href="/dashboard" variant="outline" size="sm">
-                    <LayoutDashboard className="h-4 w-4" /> Espace CRM
-                  </ButtonLink>
                   <ButtonLink href="#contact" variant="gold" size="sm">
                     Prendre rendez-vous
                   </ButtonLink>

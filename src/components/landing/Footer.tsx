@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Container } from "@/components/ui/Card";
 import { Logo } from "@/components/ui/Logo";
 import { site } from "@/data/site";
@@ -47,9 +46,9 @@ export function Footer() {
               ))}
               <li className="pt-1">{site.contact.offices.join(" • ")}</li>
               <li>
-                <Link href="/dashboard" className="font-medium text-gold-700 hover:text-gold-800">
-                  Accès Espace CRM →
-                </Link>
+                <a href="#contact" className="font-medium text-gold-700 hover:text-gold-800">
+                  Prendre rendez-vous →
+                </a>
               </li>
             </ul>
           </div>

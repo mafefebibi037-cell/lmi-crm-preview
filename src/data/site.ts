@@ -60,12 +60,12 @@ export const heroConfig: HeroConfig = {
   badges: ["Canada", "Royaume-Uni", "Afrique du Sud", "Hongrie", "Bulgarie"],
 };
 
-/* ---------- Statistiques (section chiffres) ---------- */
+/* ---------- Statistiques (section chiffres, compteur animé) ---------- */
 export const stats = [
-  { value: "1 200+", label: "Candidats accompagnés" },
-  { value: "94%", label: "Taux d'acceptation visa" },
-  { value: "5", label: "Destinations partenaires" },
-  { value: "3 500$", label: "Dès la 1ère année d'études" },
+  { end: 1200, suffix: "+", prefix: "", label: "Candidats accompagnés" },
+  { end: 94, suffix: "%", prefix: "", label: "Taux d'acceptation visa" },
+  { end: 5, suffix: "", prefix: "", label: "Destinations partenaires" },
+  { end: 3500, suffix: " $", prefix: "", label: "Dès la 1ère année d'études" },
 ];
 
 /* ---------- Destinations phares ---------- */

@@ -1,5 +1,6 @@
 import { Container } from "@/components/ui/Card";
 import { Reveal } from "@/components/ui/Reveal";
+import { CountUp } from "@/components/ui/CountUp";
 import { stats } from "@/data/site";
 
 export function Stats() {
@@ -11,7 +12,7 @@ export function Stats() {
             {stats.map((s, i) => (
               <Reveal key={s.label} delay={i * 90} className="text-center">
                 <div className="font-[family-name:var(--font-display)] text-4xl font-bold text-gradient-gold sm:text-5xl">
-                  {s.value}
+                  <CountUp end={s.end} prefix={s.prefix} suffix={s.suffix} />
                 </div>
                 <div className="mt-2 text-sm text-white/70">{s.label}</div>
               </Reveal>

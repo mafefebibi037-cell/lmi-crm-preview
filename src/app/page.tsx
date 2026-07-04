@@ -1,6 +1,8 @@
 import { Navbar } from "@/components/landing/Navbar";
 import { Hero } from "@/components/landing/Hero";
+import { TrustStrip } from "@/components/landing/TrustStrip";
 import { Services } from "@/components/landing/Services";
+import { FeatureTabs } from "@/components/landing/FeatureTabs";
 import { Stats } from "@/components/landing/Stats";
 import { Process } from "@/components/landing/Process";
 import { Destinations } from "@/components/landing/Destinations";
@@ -15,7 +17,9 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
+        <TrustStrip />
         <Services />
+        <FeatureTabs />
         <Stats />
         <Process />
         <Destinations />
