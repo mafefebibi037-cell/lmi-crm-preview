@@ -6,6 +6,7 @@ import { FeatureTabs } from "@/components/landing/FeatureTabs";
 import { Stats } from "@/components/landing/Stats";
 import { Process } from "@/components/landing/Process";
 import { Destinations } from "@/components/landing/Destinations";
+import { CinematicBand } from "@/components/landing/CinematicBand";
 import { Testimonials } from "@/components/landing/Testimonials";
 import { CTA } from "@/components/landing/CTA";
 import { Footer } from "@/components/landing/Footer";
@@ -23,6 +24,7 @@ export default function Home() {
         <Stats />
         <Process />
         <Destinations />
+        <CinematicBand />
         <Testimonials />
         <CTA />
       </main>

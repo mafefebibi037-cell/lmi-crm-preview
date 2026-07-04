@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Container } from "@/components/ui/Card";
 import { Eyebrow } from "@/components/ui/Badge";
 import { Reveal } from "@/components/ui/Reveal";
@@ -21,12 +22,31 @@ export function Destinations() {
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
           {destinations.map((d, i) => (
             <Reveal key={d.name} delay={i * 80}>
-              <div className="group flex h-full flex-col items-center rounded-2xl border border-navy-100/70 bg-white p-6 text-center shadow-[var(--shadow-card)] transition-all duration-300 hover:-translate-y-1 hover:border-gold-300 hover:shadow-[var(--shadow-card-lg)]">
-                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-ivory text-4xl ring-1 ring-navy-100 transition-transform group-hover:scale-110">
-                  {d.flag}
+              <div className="group relative h-72 overflow-hidden rounded-2xl shadow-[var(--shadow-card)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-card-lg)]">
+                <Image
+                  src={d.image}
+                  alt={`${d.name} — ${d.note}`}
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                {/* Voile dégradé */}
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-navy-950/25 to-transparent" />
+                {/* Badge drapeau (flagcdn) */}
+                <div className="absolute left-3 top-3 flex h-8 w-8 items-center justify-center overflow-hidden rounded-full bg-white/90 shadow-sm ring-1 ring-white/50 backdrop-blur">
+                  <Image
+                    src={`https://flagcdn.com/w80/${d.code}.png`}
+                    alt={`Drapeau ${d.name}`}
+                    width={32}
+                    height={32}
+                    className="h-full w-full object-cover"
+                  />
                 </div>
-                <h3 className="mt-4 font-semibold text-navy-900">{d.name}</h3>
-                <p className="mt-1 text-xs text-navy-500">{d.note}</p>
+                {/* Texte */}
+                <div className="absolute inset-x-0 bottom-0 p-4">
+                  <h3 className="text-lg font-semibold text-white">{d.name}</h3>
+                  <p className="mt-0.5 text-xs text-white/75">{d.note}</p>
+                </div>
               </div>
             </Reveal>
           ))}

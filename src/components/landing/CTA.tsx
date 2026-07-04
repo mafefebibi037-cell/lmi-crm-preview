@@ -1,7 +1,8 @@
+import Image from "next/image";
 import { Container } from "@/components/ui/Card";
 import { ButtonLink } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
-import { site } from "@/data/site";
+import { site, graduationImage } from "@/data/site";
 import { MapPin, Phone, MessageCircle } from "lucide-react";
 
 export function CTA() {
@@ -13,7 +14,16 @@ export function CTA() {
     <section id="contact" className="relative py-24 sm:py-28">
       <Container>
         <Reveal>
-          <div className="relative overflow-hidden rounded-3xl bg-mesh-navy px-6 py-14 text-center sm:px-16">
+          <div className="relative overflow-hidden rounded-3xl bg-navy-950 px-6 py-14 text-center sm:px-16">
+            {/* Image d'ambiance (remise de diplômes) */}
+            <Image
+              src={graduationImage}
+              alt=""
+              fill
+              sizes="100vw"
+              className="object-cover opacity-30"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/80 to-navy-950/60" />
             <div className="absolute -right-16 -top-16 h-56 w-56 rounded-full bg-gold-400/20 blur-[90px]" />
             <div className="relative mx-auto max-w-2xl">
               <h2 className="font-[family-name:var(--font-display)] text-3xl font-bold text-white sm:text-4xl">

@@ -1,25 +1,27 @@
+import Image from "next/image";
 import { Container } from "@/components/ui/Card";
 import { Eyebrow } from "@/components/ui/Badge";
 import { Reveal } from "@/components/ui/Reveal";
 import { Star, Quote } from "lucide-react";
 
+// Portraits : randomuser.me (placeholders réalistes, à remplacer par de vrais clients)
 const testimonials = [
   {
     name: "Divine K.",
     role: "Étudiante — Hongrie",
-    color: "#7c3aed",
+    photo: "https://randomuser.me/api/portraits/women/68.jpg",
     text: "Grâce à LMI, j'ai obtenu mon visa étudiant en quelques semaines. L'équipe m'a accompagnée à chaque étape, même pour préparer mon départ.",
   },
   {
     name: "Rachel M.",
     role: "Admise — Univ. de Toronto",
-    color: "#a87c22",
+    photo: "https://randomuser.me/api/portraits/women/44.jpg",
     text: "Je pensais que le Canada était inaccessible. Ils ont monté un dossier solide et aujourd'hui j'étudie à Toronto. Merci infiniment !",
   },
   {
     name: "Joseph K.",
     role: "Immigration — Canada",
-    color: "#24357c",
+    photo: "https://randomuser.me/api/portraits/men/32.jpg",
     text: "Un accompagnement vraiment professionnel pour l'Entrée Express. Des conseils clairs, des experts qui connaissent parfaitement les procédures.",
   },
 ];
@@ -56,15 +58,13 @@ export function Testimonials() {
                   &ldquo;{t.text}&rdquo;
                 </blockquote>
                 <figcaption className="mt-6 flex items-center gap-3">
-                  <span
-                    className="flex h-11 w-11 items-center justify-center rounded-full text-sm font-bold text-white"
-                    style={{ backgroundColor: t.color }}
-                  >
-                    {t.name
-                      .split(" ")
-                      .map((w) => w[0])
-                      .join("")}
-                  </span>
+                  <Image
+                    src={t.photo}
+                    alt={t.name}
+                    width={44}
+                    height={44}
+                    className="h-11 w-11 rounded-full object-cover ring-2 ring-gold-200"
+                  />
                   <div>
                     <div className="text-sm font-semibold text-navy-900">
                       {t.name}

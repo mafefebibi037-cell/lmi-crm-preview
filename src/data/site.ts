@@ -68,11 +68,52 @@ export const stats = [
   { end: 3500, suffix: " $", prefix: "", label: "Dès la 1ère année d'études" },
 ];
 
-/* ---------- Destinations phares ---------- */
+/* ---------- Destinations phares ----------
+   Images : Unsplash (libres de droits), contenu vérifié.
+   Pour changer une image, remplace simplement l'URL.
+--------------------------------------------------------- */
 export const destinations = [
-  { name: "Canada", flag: "🇨🇦", note: "Études & immigration" },
-  { name: "Royaume-Uni", flag: "🇬🇧", note: "Universités de prestige" },
-  { name: "Afrique du Sud", flag: "🇿🇦", note: "Passerelle stratégique" },
-  { name: "Hongrie", flag: "🇭🇺", note: "Europe accessible" },
-  { name: "Bulgarie", flag: "🇧🇬", note: "Diplômes reconnus UE" },
+  {
+    name: "Canada",
+    code: "ca",
+    note: "Études & immigration",
+    image:
+      "https://images.unsplash.com/photo-1517935706615-2717063c2225?w=800&q=80",
+  },
+  {
+    name: "Royaume-Uni",
+    code: "gb",
+    note: "Universités de prestige",
+    image:
+      "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800&q=80",
+  },
+  {
+    name: "Afrique du Sud",
+    code: "za",
+    note: "Passerelle stratégique",
+    image:
+      "https://images.unsplash.com/photo-1580060839134-75a5edca2e99?w=800&q=80",
+  },
+  {
+    name: "Hongrie",
+    code: "hu",
+    note: "Europe accessible",
+    image:
+      "https://images.unsplash.com/photo-1551867633-194f125bddfa?w=800&q=80",
+  },
+  {
+    name: "Bulgarie",
+    code: "bg",
+    note: "Diplômes reconnus UE",
+    image:
+      "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&q=80",
+  },
 ];
+
+/* Image d'ambiance "études" (remise de diplômes) — fond CTA */
+export const graduationImage =
+  "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=1400&q=80";
+
+/* Vidéo de fond cinématique (Pexels, libre de droits) */
+export const cinematicVideo =
+  "https://videos.pexels.com/video-files/3195394/3195394-uhd_2560_1440_25fps.mp4";
