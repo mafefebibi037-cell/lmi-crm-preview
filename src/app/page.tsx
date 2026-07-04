@@ -8,6 +8,7 @@ import { Process } from "@/components/landing/Process";
 import { Destinations } from "@/components/landing/Destinations";
 import { CinematicBand } from "@/components/landing/CinematicBand";
 import { Testimonials } from "@/components/landing/Testimonials";
+import { Gallery } from "@/components/landing/Gallery";
 import { CTA } from "@/components/landing/CTA";
 import { Footer } from "@/components/landing/Footer";
 import { WhatsappFab } from "@/components/landing/WhatsappFab";
@@ -26,6 +27,7 @@ export default function Home() {
         <Destinations />
         <CinematicBand />
         <Testimonials />
+        <Gallery />
         <CTA />
       </main>
       <Footer />

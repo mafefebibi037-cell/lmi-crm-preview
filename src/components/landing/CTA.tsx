@@ -11,10 +11,10 @@ export function CTA() {
   )}`;
 
   return (
-    <section id="contact" className="relative py-24 sm:py-28">
+    <section id="contact" className="relative py-14 sm:py-16">
       <Container>
         <Reveal>
-          <div className="relative overflow-hidden rounded-3xl bg-navy-950 px-6 py-14 text-center sm:px-16">
+          <div className="relative overflow-hidden rounded-3xl bg-navy-950 px-6 py-20 text-center sm:px-16 sm:py-28">
             {/* Image d'ambiance (remise de diplômes) */}
             <Image
               src={graduationImage}
@@ -25,11 +25,11 @@ export function CTA() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/80 to-navy-950/60" />
             <div className="absolute -right-16 -top-16 h-56 w-56 rounded-full bg-gold-400/20 blur-[90px]" />
-            <div className="relative mx-auto max-w-2xl">
-              <h2 className="font-[family-name:var(--font-display)] text-3xl font-bold text-white sm:text-4xl">
+            <div className="relative mx-auto max-w-3xl">
+              <h2 className="font-[family-name:var(--font-display)] text-4xl font-bold text-white sm:text-6xl">
                 Inscrivez-vous dès aujourd&apos;hui
               </h2>
-              <p className="mx-auto mt-4 max-w-xl text-white/70">
+              <p className="mx-auto mt-5 max-w-xl text-lg text-white/75">
                 Assurez votre avenir professionnel avec des experts certifiés.
                 Contactez-nous sur WhatsApp pour une évaluation gratuite de votre
                 dossier.

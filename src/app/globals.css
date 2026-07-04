@@ -103,6 +103,12 @@ html {
 .marquee:hover .marquee-track {
   animation-play-state: paused;
 }
+.marquee-track.reverse {
+  animation-direction: reverse;
+}
+.marquee-track.slow {
+  animation-duration: 48s;
+}
 
 * {
   border-color: color-mix(in srgb, var(--color-navy-900) 8%, transparent);

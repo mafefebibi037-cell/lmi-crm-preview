@@ -117,3 +117,36 @@ export const graduationImage =
 /* Vidéo de fond cinématique (Pexels, libre de droits) */
 export const cinematicVideo =
   "https://videos.pexels.com/video-files/3195394/3195394-uhd_2560_1440_25fps.mp4";
+
+/* ---------- Galerie (illustrations vidéo + images) ---------- */
+export const galleryVideo =
+  "https://videos.pexels.com/video-files/2169880/2169880-hd_1920_1080_30fps.mp4";
+
+export const gallery = {
+  images: [
+    {
+      src: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80",
+      caption: "Un accompagnement personnalisé",
+    },
+    {
+      src: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&q=80",
+      caption: "La réussite de nos étudiants",
+    },
+  ],
+  videoPoster:
+    "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=1000&q=80",
+};
+
+/* Mots défilants (scrolling text) */
+export const scrollingWords = [
+  "Étudier",
+  "Réussir",
+  "Voyager",
+  "S'installer",
+  "Canada",
+  "Royaume-Uni",
+  "IELTS",
+  "Visa",
+  "Immigration",
+  "Avenir",
+];

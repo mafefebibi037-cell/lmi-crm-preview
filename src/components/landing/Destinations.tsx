@@ -19,10 +19,14 @@ export function Destinations() {
           </Reveal>
         </div>
 
-        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="mt-14 grid auto-rows-[20rem] gap-5 sm:grid-cols-2 sm:auto-rows-[22rem] lg:grid-cols-6">
           {destinations.map((d, i) => (
-            <Reveal key={d.name} delay={i * 80}>
-              <div className="group relative h-72 overflow-hidden rounded-2xl shadow-[var(--shadow-card)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-card-lg)]">
+            <Reveal
+              key={d.name}
+              delay={i * 80}
+              className={i < 3 ? "lg:col-span-2" : "lg:col-span-3"}
+            >
+              <div className="group relative h-full overflow-hidden rounded-3xl shadow-[var(--shadow-card)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-card-lg)]">
                 <Image
                   src={d.image}
                   alt={`${d.name} — ${d.note}`}
