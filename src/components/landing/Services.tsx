@@ -39,12 +39,12 @@ export function Services() {
             <Eyebrow>Nos services</Eyebrow>
           </Reveal>
           <Reveal delay={80}>
-            <h2 className="mt-5 font-[family-name:var(--font-display)] text-3xl font-bold text-navy-900 sm:text-4xl">
+            <h2 className="mt-5 font-[family-name:var(--font-display)] text-3xl font-bold text-white sm:text-4xl">
               Un accompagnement complet, de A à Z
             </h2>
           </Reveal>
           <Reveal delay={140}>
-            <p className="mt-4 text-navy-500">
+            <p className="mt-4 text-white/70">
               Quatre pôles d'expertise pour transformer votre projet
               international en réalité.
             </p>
@@ -54,29 +54,29 @@ export function Services() {
         <div className="mt-14 grid gap-6 sm:grid-cols-2">
           {services.map((s, i) => (
             <Reveal key={s.title} delay={i * 90}>
-              <div className="group relative h-full overflow-hidden rounded-2xl border border-navy-100/70 bg-white p-7 shadow-[var(--shadow-card)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-card-lg)]">
-                <div className="absolute right-0 top-0 h-24 w-24 rounded-bl-[3rem] bg-gold-50 transition-colors group-hover:bg-gold-100" />
+              <div className="glass group relative h-full overflow-hidden rounded-2xl p-7 transition-all duration-300 hover:-translate-y-1 hover:border-gold-300/40">
+                <div className="absolute right-0 top-0 h-24 w-24 rounded-bl-[3rem] bg-gold-400/10 transition-colors group-hover:bg-gold-400/20" />
                 <div className="relative">
-                  <div className="flex h-13 w-13 items-center justify-center rounded-xl bg-navy-900 p-3.5 text-gold-400 shadow-sm">
+                  <div className="flex h-13 w-13 items-center justify-center rounded-xl bg-gold-400 p-3.5 text-navy-950 shadow-sm">
                     <s.icon className="h-6 w-6" />
                   </div>
-                  <h3 className="mt-5 text-xl font-semibold text-navy-900">
+                  <h3 className="mt-5 text-xl font-semibold text-white">
                     {s.title}
                   </h3>
-                  <p className="mt-2.5 text-sm leading-relaxed text-navy-500">
+                  <p className="mt-2.5 text-sm leading-relaxed text-white/65">
                     {s.desc}
                   </p>
                   <ul className="mt-5 flex flex-wrap gap-2">
                     {s.points.map((p) => (
                       <li
                         key={p}
-                        className="rounded-full bg-navy-50 px-3 py-1 text-xs font-medium text-navy-600"
+                        className="rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-white/80"
                       >
                         {p}
                       </li>
                     ))}
                   </ul>
-                  <div className="mt-6 inline-flex items-center gap-1 text-sm font-medium text-gold-700 opacity-0 transition-opacity group-hover:opacity-100">
+                  <div className="mt-6 inline-flex items-center gap-1 text-sm font-medium text-gold-300 opacity-0 transition-opacity group-hover:opacity-100">
                     En savoir plus <ArrowUpRight className="h-4 w-4" />
                   </div>
                 </div>

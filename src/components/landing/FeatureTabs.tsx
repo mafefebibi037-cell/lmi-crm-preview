@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { Container } from "@/components/ui/Card";
 import { Eyebrow } from "@/components/ui/Badge";
 import { Reveal } from "@/components/ui/Reveal";
@@ -26,6 +27,9 @@ const tabs = [
       "Plan personnalisé étape par étape",
     ],
     stat: { value: "1 200+", label: "profils accompagnés" },
+    advisor: "Ayesha N.",
+    role: "Conseillère senior",
+    photo: "https://randomuser.me/api/portraits/women/68.jpg",
   },
   {
     id: "admission",
@@ -39,6 +43,9 @@ const tabs = [
       "Études dès 3 500 USD la 1ère année",
     ],
     stat: { value: "5", label: "pays de destination" },
+    advisor: "Didier M.",
+    role: "Responsable admissions",
+    photo: "https://randomuser.me/api/portraits/men/32.jpg",
   },
   {
     id: "visa",
@@ -52,6 +59,9 @@ const tabs = [
       "Suivi jusqu'à la décision finale",
     ],
     stat: { value: "94%", label: "de visas acceptés" },
+    advisor: "Sarah I.",
+    role: "Experte visa & immigration",
+    photo: "https://randomuser.me/api/portraits/women/44.jpg",
   },
   {
     id: "passerelle",
@@ -65,6 +75,9 @@ const tabs = [
       "Transition facilitée vers l'Ouest",
     ],
     stat: { value: "2", label: "bureaux (RDC & Afrique du Sud)" },
+    advisor: "Jean K.",
+    role: "Coordinateur Afrique du Sud",
+    photo: "https://randomuser.me/api/portraits/men/75.jpg",
   },
 ];
 
@@ -73,14 +86,14 @@ export function FeatureTabs() {
   const tab = tabs[active];
 
   return (
-    <section className="relative bg-ivory-dark py-24 sm:py-28">
+    <section className="relative py-24 sm:py-28">
       <Container>
         <div className="mx-auto max-w-2xl text-center">
           <Reveal>
             <Eyebrow>Une plateforme, tout votre parcours</Eyebrow>
           </Reveal>
           <Reveal delay={80}>
-            <h2 className="mt-5 font-[family-name:var(--font-display)] text-3xl font-bold text-navy-900 sm:text-4xl">
+            <h2 className="mt-5 font-[family-name:var(--font-display)] text-3xl font-bold text-white sm:text-4xl">
               Tout ce dont vous avez besoin, au même endroit
             </h2>
           </Reveal>
@@ -97,16 +110,16 @@ export function FeatureTabs() {
                   className={cn(
                     "group flex flex-shrink-0 items-center gap-3 rounded-2xl border px-4 py-3.5 text-left transition-all lg:flex-shrink",
                     active === i
-                      ? "border-gold-300 bg-white shadow-[var(--shadow-card)]"
-                      : "border-transparent bg-white/50 hover:bg-white"
+                      ? "glass-strong border-gold-300/40"
+                      : "border-white/10 bg-white/[0.02] hover:bg-white/[0.06]"
                   )}
                 >
                   <span
                     className={cn(
                       "flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl transition-colors",
                       active === i
-                        ? "bg-navy-900 text-gold-400"
-                        : "bg-navy-50 text-navy-500"
+                        ? "bg-gold-400 text-navy-950"
+                        : "bg-white/10 text-white/60"
                     )}
                   >
                     <t.icon className="h-5 w-5" />
@@ -114,7 +127,7 @@ export function FeatureTabs() {
                   <span
                     className={cn(
                       "text-sm font-semibold",
-                      active === i ? "text-navy-900" : "text-navy-600"
+                      active === i ? "text-white" : "text-white/70"
                     )}
                   >
                     {t.title}
@@ -126,34 +139,43 @@ export function FeatureTabs() {
             {/* Panneau */}
             <div
               key={tab.id}
-              className="animate-fade-up rounded-3xl border border-navy-100 bg-white p-8 shadow-[var(--shadow-card)] sm:p-10"
+              className="glass-strong animate-fade-up rounded-3xl p-8 sm:p-10"
             >
               <div className="grid gap-8 sm:grid-cols-2 sm:items-center">
                 <div>
-                  <h3 className="text-2xl font-semibold text-navy-900">
+                  <h3 className="text-2xl font-semibold text-white">
                     {tab.heading}
                   </h3>
-                  <p className="mt-3 text-navy-500">{tab.desc}</p>
+                  <p className="mt-3 text-white/65">{tab.desc}</p>
                   <ul className="mt-6 space-y-3">
                     {tab.points.map((p) => (
                       <li key={p} className="flex items-start gap-3">
-                        <span className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
+                        <span className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-emerald-400/20 text-emerald-300">
                           <Check className="h-3 w-3" strokeWidth={3} />
                         </span>
-                        <span className="text-sm text-navy-700">{p}</span>
+                        <span className="text-sm text-white/80">{p}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
 
-                {/* Visuel */}
+                {/* Visuel : photo du conseiller + stat */}
                 <div className="relative overflow-hidden rounded-2xl bg-mesh-navy p-8 text-center">
                   <div className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-gold-400/20 blur-2xl" />
                   <div className="relative">
-                    <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-white/10 text-gold-400 ring-1 ring-white/15">
-                      <tab.icon className="h-8 w-8" />
+                    <Image
+                      src={tab.photo}
+                      alt={tab.advisor}
+                      width={96}
+                      height={96}
+                      className="mx-auto h-24 w-24 rounded-full object-cover ring-4 ring-white/15"
+                    />
+                    <div className="mt-4 text-base font-semibold text-white">
+                      {tab.advisor}
                     </div>
-                    <div className="mt-6 font-[family-name:var(--font-display)] text-5xl font-bold text-gradient-gold">
+                    <div className="text-xs text-gold-300">{tab.role}</div>
+                    <div className="mx-auto mt-5 h-px w-16 bg-white/15" />
+                    <div className="mt-5 font-[family-name:var(--font-display)] text-5xl font-bold text-gradient-gold">
                       {tab.stat.value}
                     </div>
                     <div className="mt-2 text-sm text-white/70">

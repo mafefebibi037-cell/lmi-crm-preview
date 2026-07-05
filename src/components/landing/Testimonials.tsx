@@ -28,14 +28,14 @@ const testimonials = [
 
 export function Testimonials() {
   return (
-    <section id="testimonials" className="relative bg-ivory-dark py-24 sm:py-28">
+    <section id="testimonials" className="relative py-24 sm:py-28">
       <Container>
         <div className="mx-auto max-w-2xl text-center">
           <Reveal>
             <Eyebrow>Ils nous font confiance</Eyebrow>
           </Reveal>
           <Reveal delay={80}>
-            <h2 className="mt-5 font-[family-name:var(--font-display)] text-3xl font-bold text-navy-900 sm:text-4xl">
+            <h2 className="mt-5 font-[family-name:var(--font-display)] text-3xl font-bold text-white sm:text-4xl">
               Des parcours réussis, partout dans le monde
             </h2>
           </Reveal>
@@ -44,7 +44,7 @@ export function Testimonials() {
         <div className="mt-14 grid gap-6 lg:grid-cols-3">
           {testimonials.map((t, i) => (
             <Reveal key={t.name} delay={i * 100}>
-              <figure className="flex h-full flex-col rounded-2xl border border-navy-100/70 bg-white p-7 shadow-[var(--shadow-card)]">
+              <figure className="glass flex h-full flex-col rounded-2xl p-7">
                 <Quote className="h-8 w-8 text-gold-300" />
                 <div className="mt-3 flex gap-0.5">
                   {Array.from({ length: 5 }).map((_, j) => (
@@ -54,7 +54,7 @@ export function Testimonials() {
                     />
                   ))}
                 </div>
-                <blockquote className="mt-4 flex-1 text-sm leading-relaxed text-navy-700">
+                <blockquote className="mt-4 flex-1 text-sm leading-relaxed text-white/80">
                   &ldquo;{t.text}&rdquo;
                 </blockquote>
                 <figcaption className="mt-6 flex items-center gap-3">
@@ -63,13 +63,13 @@ export function Testimonials() {
                     alt={t.name}
                     width={44}
                     height={44}
-                    className="h-11 w-11 rounded-full object-cover ring-2 ring-gold-200"
+                    className="h-11 w-11 rounded-full object-cover ring-2 ring-gold-300/50"
                   />
                   <div>
-                    <div className="text-sm font-semibold text-navy-900">
+                    <div className="text-sm font-semibold text-white">
                       {t.name}
                     </div>
-                    <div className="text-xs text-navy-500">{t.role}</div>
+                    <div className="text-xs text-white/55">{t.role}</div>
                   </div>
                 </figcaption>
               </figure>

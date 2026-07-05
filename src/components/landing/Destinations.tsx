@@ -13,7 +13,7 @@ export function Destinations() {
             <Eyebrow>Nos destinations phares</Eyebrow>
           </Reveal>
           <Reveal delay={80}>
-            <h2 className="mt-5 font-[family-name:var(--font-display)] text-3xl font-bold text-navy-900 sm:text-4xl">
+            <h2 className="mt-5 font-[family-name:var(--font-display)] text-3xl font-bold text-white sm:text-4xl">
               De l&apos;Europe au Canada, le monde s&apos;ouvre à vous
             </h2>
           </Reveal>

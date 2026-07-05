@@ -32,13 +32,13 @@ export function Navbar() {
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-300",
         scrolled
-          ? "border-b border-navy-100/70 bg-ivory/85 backdrop-blur-lg py-2.5"
+          ? "border-b border-white/10 bg-[#060f2e]/80 backdrop-blur-lg py-2.5"
           : "py-4"
       )}
     >
       <Container className="flex items-center justify-between">
         <Link href="/" aria-label="Accueil">
-          <Logo variant={scrolled ? "dark" : "light"} />
+          <Logo variant="light" />
         </Link>
 
         <nav className="hidden items-center gap-8 lg:flex">
@@ -46,12 +46,7 @@ export function Navbar() {
             <a
               key={l.href}
               href={l.href}
-              className={cn(
-                "text-sm font-medium transition-colors",
-                scrolled
-                  ? "text-navy-600 hover:text-navy-900"
-                  : "text-white/80 hover:text-white"
-              )}
+              className="text-sm font-medium text-white/80 transition-colors hover:text-white"
             >
               {l.label}
             </a>
@@ -66,10 +61,7 @@ export function Navbar() {
 
         <button
           onClick={() => setOpen((v) => !v)}
-          className={cn(
-            "lg:hidden rounded-lg p-2",
-            scrolled ? "text-navy-900" : "text-white"
-          )}
+          className="lg:hidden rounded-lg p-2 text-white"
           aria-label="Menu"
         >
           {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -80,14 +72,14 @@ export function Navbar() {
       {open && (
         <div className="lg:hidden">
           <Container className="mt-3">
-            <div className="rounded-2xl border border-navy-100 bg-white p-4 shadow-[var(--shadow-card-lg)]">
+            <div className="glass-strong rounded-2xl p-4 shadow-[var(--shadow-card-lg)]">
               <nav className="flex flex-col">
                 {links.map((l) => (
                   <a
                     key={l.href}
                     href={l.href}
                     onClick={() => setOpen(false)}
-                    className="rounded-lg px-3 py-2.5 text-sm font-medium text-navy-700 hover:bg-navy-50"
+                    className="rounded-lg px-3 py-2.5 text-sm font-medium text-white/80 hover:bg-white/10"
                   >
                     {l.label}
                   </a>

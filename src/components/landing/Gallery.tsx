@@ -14,7 +14,7 @@ export function Gallery() {
             <Eyebrow>En images & en vidéo</Eyebrow>
           </Reveal>
           <Reveal delay={80}>
-            <h2 className="mt-5 font-[family-name:var(--font-display)] text-3xl font-bold text-navy-900 sm:text-4xl">
+            <h2 className="mt-5 font-[family-name:var(--font-display)] text-3xl font-bold text-white sm:text-4xl">
               L&apos;aventure de nos étudiants
             </h2>
           </Reveal>
@@ -76,7 +76,7 @@ export function Gallery() {
             {[...scrollingWords, ...scrollingWords].map((w, i) => (
               <span
                 key={i}
-                className="mx-5 font-[family-name:var(--font-display)] text-5xl font-bold text-navy-900/90 sm:text-7xl"
+                className="mx-5 font-[family-name:var(--font-display)] text-5xl font-bold text-white/90 sm:text-7xl"
               >
                 {w}
                 <span className="mx-5 text-gold-400">✦</span>
@@ -90,7 +90,7 @@ export function Gallery() {
               <span
                 key={i}
                 className="mx-5 font-[family-name:var(--font-display)] text-5xl font-bold text-transparent sm:text-7xl"
-                style={{ WebkitTextStroke: "1px rgba(11,23,64,0.25)" }}
+                style={{ WebkitTextStroke: "1px rgba(255,255,255,0.28)" }}
               >
                 {w}
                 <span className="mx-5 text-gold-400/60">✦</span>

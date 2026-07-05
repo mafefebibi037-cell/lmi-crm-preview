@@ -22,7 +22,7 @@ export function Badge({
 /** Petite étiquette "eyebrow" dorée au-dessus des titres de section. */
 export function Eyebrow({
   children,
-  light = false,
+  light = true,
 }: {
   children: React.ReactNode;
   light?: boolean;

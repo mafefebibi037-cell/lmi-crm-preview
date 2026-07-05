@@ -50,6 +50,7 @@ export function HorizonHero() {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [currentSection, setCurrentSection] = useState(0);
   const [isReady, setIsReady] = useState(false);
+  const [active, setActive] = useState(true);
   const totalSections = 2;
 
   const threeRefs = useRef<any>({
@@ -409,6 +410,9 @@ export function HorizonHero() {
       const progress = Math.min(Math.max(-rect.top / scrollable, 0), 1);
       const pseudoScrollY = progress * scrollable;
 
+      // Actif tant que la section occupe l'écran
+      setActive(rect.top < window.innerHeight * 0.5 && rect.bottom > window.innerHeight * 0.5);
+
       setScrollProgress(progress);
       const newSection = Math.min(Math.floor(progress * totalSections), totalSections);
       setCurrentSection(newSection);
@@ -460,7 +464,7 @@ export function HorizonHero() {
   };
 
   return (
-    <div ref={containerRef} className="horizon">
+    <div ref={containerRef} className={`horizon${active ? "" : " is-inactive"}`}>
       <canvas ref={canvasRef} className="horizon-canvas" />
 
       {/* Menu latéral */}
