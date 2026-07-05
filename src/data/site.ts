@@ -11,8 +11,8 @@ export const site = {
   slogan: "Votre avenir. Notre mission.",
   subSlogan: "Ensemble, ouvrons les portes du monde.",
   contact: {
-    phones: ["+243 997 173 630", "+243 892 987 796"],
-    whatsapp: "243997173630",
+    phones: ["+243 854 241 231"],
+    whatsapp: "243854241231",
     email: "contact@legalmigration-intl.com",
     address:
       "Croisement Avenue Kilela Balanda et Avenue de la Révolution (En face de la station-service), Lubumbashi",
