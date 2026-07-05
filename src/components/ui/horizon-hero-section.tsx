@@ -403,19 +403,23 @@ export function HorizonHero() {
     const handleScroll = () => {
       const refs = threeRefs.current;
       const container = containerRef.current;
-      if (!container || !refs.mountains.length || !refs.nebula) return;
+      if (!container) return;
 
       const rect = container.getBoundingClientRect();
-      const scrollable = container.offsetHeight - window.innerHeight;
+      const scrollable = Math.max(container.offsetHeight - window.innerHeight, 1);
       const progress = Math.min(Math.max(-rect.top / scrollable, 0), 1);
       const pseudoScrollY = progress * scrollable;
 
-      // Actif tant que la section occupe l'écran
-      setActive(rect.top < window.innerHeight * 0.5 && rect.bottom > window.innerHeight * 0.5);
-
+      // --- UI (toujours mis à jour, indépendamment de Three.js) ---
+      // Actif tant que le cosmos remplit l'écran ; disparaît dès qu'on
+      // dépasse le dernier écran (le bas de la section entre dans le viewport).
+      setActive(rect.bottom > window.innerHeight * 0.95);
       setScrollProgress(progress);
       const newSection = Math.min(Math.floor(progress * totalSections), totalSections);
       setCurrentSection(newSection);
+
+      // --- Three.js (seulement si la scène est prête) ---
+      if (!refs.mountains.length || !refs.nebula) return;
 
       const totalProgress = progress * totalSections;
       const sectionProgress = totalProgress % 1;

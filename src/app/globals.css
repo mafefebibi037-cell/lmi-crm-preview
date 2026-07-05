@@ -195,13 +195,14 @@ body {
   position: relative;
   z-index: 2;
 }
-/* Masquer le cosmos + l'UI quand la section n'est plus à l'écran */
+/* Masquer le cosmos + l'UI quand la section n'est plus à l'écran.
+   !important car GSAP pose un visibility:visible inline sur l'UI. */
 .horizon.is-inactive .horizon-canvas,
 .horizon.is-inactive .horizon-side-menu,
 .horizon.is-inactive .horizon-scroll-progress {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
 }
 .horizon-screen {
   height: 100vh;
