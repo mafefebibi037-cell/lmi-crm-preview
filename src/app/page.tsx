@@ -1,5 +1,5 @@
 import { Navbar } from "@/components/landing/Navbar";
-import { Hero } from "@/components/landing/Hero";
+import { HorizonHero } from "@/components/ui/horizon-hero-section";
 import { TrustStrip } from "@/components/landing/TrustStrip";
 import { Services } from "@/components/landing/Services";
 import { FeatureTabs } from "@/components/landing/FeatureTabs";
@@ -18,7 +18,7 @@ export default function Home() {
     <>
       <Navbar />
       <main>
-        <Hero />
+        <HorizonHero />
         <TrustStrip />
         <Services />
         <FeatureTabs />
