@@ -11,7 +11,7 @@ export function CTA() {
   )}`;
 
   return (
-    <section id="contact" className="relative py-14 sm:py-16">
+    <section className="relative py-14 sm:py-16">
       <Container>
         <Reveal>
           <div className="relative overflow-hidden rounded-3xl bg-navy-950 px-6 py-20 text-center sm:px-16 sm:py-28">

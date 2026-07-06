@@ -18,7 +18,9 @@ export const site = {
       "Croisement Avenue Kilela Balanda et Avenue de la Révolution (En face de la station-service), Lubumbashi",
     offices: ["Lubumbashi, RDC", "Afrique du Sud"],
   },
+  // Liens réseaux sociaux — remplace les "#" par les vraies pages du client.
   social: {
+    whatsapp: "https://wa.me/243854241231",
     facebook: "#",
     instagram: "#",
     tiktok: "#",
