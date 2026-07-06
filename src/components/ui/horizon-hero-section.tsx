@@ -16,6 +16,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer.js";
 import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass.js";
 import { UnrealBloomPass } from "three/examples/jsm/postprocessing/UnrealBloomPass.js";
+import { HeroSocials } from "@/components/landing/HeroSocials";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -485,6 +486,7 @@ export function HorizonHero() {
               <p className="subtitle-line">{s.line1}</p>
               <p className="subtitle-line">{s.line2}</p>
             </div>
+            {i === SCREENS.length - 1 && <HeroSocials />}
           </section>
         ))}
       </div>
