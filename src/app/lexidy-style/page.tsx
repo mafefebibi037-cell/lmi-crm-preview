@@ -10,14 +10,49 @@ import { site, stats, destinations } from "@/data/site";
  * Données réelles LMI uniquement. Route séparée /lexidy-style.
  */
 
-const nav = [
+const menu = [
   { label: "Accueil", href: "#top" },
-  { label: "À propos", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "Destinations", href: "#destinations" },
-  { label: "Ressources", href: "#resources" },
+  {
+    label: "À propos",
+    items: [
+      { l: "Pourquoi nous choisir", h: "#about" },
+      { l: "Notre équipe", h: "#team" },
+      { l: "Nos chiffres", h: "#about" },
+      { l: "Carrières", h: site.social.whatsapp },
+    ],
+  },
+  {
+    label: "Services",
+    items: [
+      { l: "Visas & Immigration", h: "#services" },
+      { l: "Études à l'étranger", h: "#services" },
+      { l: "Préparation IELTS", h: "#services" },
+      { l: "Permis de travail", h: "#services" },
+      { l: "Regroupement familial", h: "#services" },
+      { l: "Conseil & évaluation", h: "#services" },
+    ],
+  },
+  {
+    label: "Destinations",
+    items: [
+      { l: "Canada", h: "#destinations" },
+      { l: "Royaume-Uni", h: "#destinations" },
+      { l: "Afrique du Sud", h: "#destinations" },
+      { l: "Hongrie", h: "#destinations" },
+      { l: "Bulgarie", h: "#destinations" },
+    ],
+  },
+  {
+    label: "Ressources",
+    items: [
+      { l: "Blog & guides", h: "#resources" },
+      { l: "Questions fréquentes (FAQ)", h: "#faq" },
+      { l: "Comment ça marche", h: "#process" },
+      { l: "Consultation gratuite", h: site.social.whatsapp },
+    ],
+  },
   { label: "Contact", href: "#contact" },
-];
+] as const;
 
 const services = [
   { title: "Visas & Immigration", desc: "Procédures de visa et d'immigration vers le Canada, le Royaume-Uni et l'Europe, montées par des experts." },
@@ -94,10 +129,34 @@ export default function LmiBrandPage() {
               <span className="text-[11px] tracking-[0.18em] text-white/70">INTERNATIONAL</span>
             </span>
           </Link>
-          <nav className="hidden items-center gap-7 text-sm text-white/80 lg:flex">
-            {nav.map((n) => (
-              <a key={n.href} href={n.href} className="hover:text-[#e7cb6a]">{n.label}</a>
-            ))}
+          <nav className="hidden items-center gap-6 text-sm text-white/80 lg:flex">
+            {menu.map((n) =>
+              "items" in n ? (
+                <div key={n.label} className="group relative">
+                  <button className="flex items-center gap-1 py-3 hover:text-[#e7cb6a]">
+                    {n.label}
+                    <span className="text-[10px] transition-transform group-hover:rotate-180">▾</span>
+                  </button>
+                  <div className="invisible absolute left-1/2 top-full z-50 -translate-x-1/2 pt-1 opacity-0 transition-all duration-150 group-hover:visible group-hover:opacity-100">
+                    <div className="min-w-[230px] rounded-xl border border-[#d4af37]/25 bg-[#2a0808] p-2 shadow-2xl">
+                      {n.items.map((it) => (
+                        <a
+                          key={it.l}
+                          href={it.h}
+                          className="block rounded-lg px-3 py-2 text-sm text-white/80 hover:bg-[#d4af37]/10 hover:text-[#e7cb6a]"
+                        >
+                          {it.l}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <a key={n.label} href={n.href} className="py-3 hover:text-[#e7cb6a]">
+                  {n.label}
+                </a>
+              )
+            )}
           </nav>
           <a href={site.social.whatsapp} className={goldBtn}>Let&apos;s Talk</a>
         </div>
@@ -147,7 +206,7 @@ export default function LmiBrandPage() {
       </section>
 
       {/* PROCESS */}
-      <section className="border-y border-[#d4af37]/15 bg-[#120505]">
+      <section id="process" className="border-y border-[#d4af37]/15 bg-[#120505]">
         <div className="mx-auto max-w-6xl px-6 py-24">
           <p className={eyebrow}>Comment ça marche</p>
           <h2 className="mt-4 text-3xl font-extrabold sm:text-4xl">Votre parcours en 4 étapes</h2>
@@ -228,7 +287,7 @@ export default function LmiBrandPage() {
       </section>
 
       {/* TEAM */}
-      <section className="mx-auto max-w-6xl px-6 py-24">
+      <section id="team" className="mx-auto max-w-6xl px-6 py-24">
         <p className={eyebrow}>Notre équipe</p>
         <h2 className="mt-4 text-3xl font-extrabold sm:text-4xl">Des experts à votre écoute</h2>
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -243,7 +302,7 @@ export default function LmiBrandPage() {
       </section>
 
       {/* FAQ */}
-      <section className="border-y border-[#d4af37]/15 bg-[#120505]">
+      <section id="faq" className="border-y border-[#d4af37]/15 bg-[#120505]">
         <div className="mx-auto max-w-3xl px-6 py-24">
           <p className={eyebrow}>Questions fréquentes</p>
           <h2 className="mt-4 text-3xl font-extrabold sm:text-4xl">Vous vous posez ces questions ?</h2>
